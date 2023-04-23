@@ -8,31 +8,23 @@ const data = {
 
 // Only edit below
 
-const first = data.lists[0][1]
-const second = data.lists[1][1]
-const third = data.lists[2][1]
+//destructing an object and array
+const [first0, first1 ] = data.lists[0];
+const [second0, second1 ] = data.lists[1];
+const [third0, third1 ] = data.lists[2];
 
-console.log(first)
-console.log(second)
-console.log(third)
-// const { first = 1 } = data.lists.first || {}
-// const { second = 1 } = data.second || {}
-// const { third = 1 } = data.third || {}
-
-const result = [first, second, third]
-
-console.log(result)
+const result = []
 
 const extractBiggest = () => {
-	if (first[first.length - 1] > second[second.length - 1]) {
-		return first[first.length - 1]
+
+	if (first1[first1.length - 1] > second1[second1.length - 1]) { //comparing the last elements of each array
+		return first1.pop() //using pop method to remove and return last element of array
 	}
-    first.pop();
-	if (third[third.length - 1] < second[second.length - 1]) {
-		return second[second.length - 1]
+
+	if (second1[second1.length - 1] > third1[third1.length - 1]) {
+		return second1.pop()
 	}
-	second.pop()
-	return third[third.length -1]
+		return third1.pop()
 }
 
 // Only edit above
